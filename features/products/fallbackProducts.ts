@@ -1,0 +1,127 @@
+import type { ProductCardProduct } from "@/components/products/ProductCard";
+import type { ProductDetailProduct } from "@/components/products/ProductDetails";
+
+export const fallbackProductCards: ProductCardProduct[] = [
+  {
+    id: "fruit-gummies",
+    name: "Assorted Fruit Gummies",
+    category: "Snacks",
+    image: "/images/gummies.png",
+    price: "$12.99",
+    sku: "GUM-01",
+    unavailable: true,
+  },
+  {
+    id: "premium-cooking-oil",
+    name: "Premium Cooking Oil",
+    category: "Pantry",
+    image: "/images/oil.png",
+    price: "$18.50",
+    sku: "OIL-250",
+  },
+  {
+    id: "jasmine-rice-bag",
+    name: "Natural Jasmine Rice Bag",
+    category: "Grains",
+    image: "/images/rice-bag.png",
+    price: "$24.00",
+    unit: "Bag",
+  },
+  {
+    id: "farm-fresh-egg",
+    name: "Farm Fresh Brown Egg",
+    category: "Butter & Eggs",
+    image: "/images/egg.png",
+    price: "$3.75",
+    unit: "Pack",
+  },
+];
+
+export const fallbackProductDetails: ProductDetailProduct[] = [
+  {
+    id: "fruit-gummies",
+    name: "Assorted Fruit Gummies",
+    category: "Snacks",
+    image: "/images/gummies.png",
+    price: "$12.99",
+    oldPrice: "$15.99",
+    sku: "GUM-01",
+    badge: "Popular",
+    rating: 4.6,
+    reviews: 34,
+    description:
+      "Colorful fruit gummies with a soft chew and bright flavor. A fun snack for lunch boxes, movie nights, and sweet pantry moments.",
+    thumbnails: [
+      "/images/gummies.png",
+      "/images/rice-bag.png",
+      "/images/oil.png",
+      "/images/egg.png",
+    ],
+    sizes: ["Small", "Medium", "Large"],
+    packs: ["Single", "Family Pack", "Box"],
+  },
+  {
+    id: "premium-cooking-oil",
+    name: "Premium Cooking Oil",
+    category: "Pantry",
+    image: "/images/oil.png",
+    price: "$18.50",
+    oldPrice: "$22.00",
+    sku: "OIL-250",
+    badge: "Fresh Stock",
+    rating: 4.8,
+    reviews: 52,
+    description:
+      "A reliable pantry essential for everyday cooking, frying, baking, and meal prep. Smooth, versatile, and selected for consistent quality.",
+    thumbnails: [
+      "/images/oil.png",
+      "/images/rice-bag.png",
+      "/images/egg.png",
+      "/images/gummies.png",
+    ],
+    sizes: ["500 ml", "1 L", "2 L"],
+    packs: ["Bottle", "Carton", "Bulk"],
+  },
+  {
+    id: "jasmine-rice-bag",
+    name: "Natural Jasmine Rice Bag",
+    category: "Grains",
+    image: "/images/rice-bag.png",
+    price: "$24.00",
+    sku: "RICE-100",
+    badge: "Best Value",
+    rating: 4.9,
+    reviews: 68,
+    description:
+      "Fragrant jasmine rice with a fluffy finish, ideal for family meals, bowls, curries, and weekly pantry stocking.",
+    thumbnails: [
+      "/images/rice-bag.png",
+      "/images/oil.png",
+      "/images/egg.png",
+      "/images/gummies.png",
+    ],
+    sizes: ["1 kg", "5 kg", "10 kg"],
+    packs: ["Bag", "Case", "Bulk"],
+  },
+  {
+    id: "farm-fresh-egg",
+    name: "Farm Fresh Brown Egg",
+    category: "Butter & Eggs",
+    image: "/images/egg.png",
+    price: "$3.75",
+    sku: "EGG-12",
+    badge: "Daily Fresh",
+    rating: 4.7,
+    reviews: 41,
+    description:
+      "Fresh brown eggs selected for everyday breakfasts, baking, and family cooking. Carefully packed for safe delivery.",
+    thumbnails: [
+      "/images/egg.png",
+      "/images/rice-bag.png",
+      "/images/oil.png",
+      "/images/gummies.png",
+    ],
+    sizes: ["6 pcs", "12 pcs", "30 pcs"],
+    packs: ["Tray", "Carton", "Bulk"],
+  },
+];
