@@ -88,7 +88,7 @@ export default function AdminShell({ children }: AdminShellProps) {
 
       <div className="lg:pl-[260px]">
         <header className="sticky top-0 z-40 border-b border-[#dfeadd] bg-white/95 backdrop-blur">
-          <div className="flex min-h-16 items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          <div className="flex min-h-16 items-center justify-between gap-3 px-3 py-3 sm:px-6 lg:px-8">
             <div className="flex min-w-0 items-center gap-3">
               <button
                 type="button"
@@ -103,18 +103,18 @@ export default function AdminShell({ children }: AdminShellProps) {
                 {isMenuOpen ? <X size={21} /> : <Menu size={21} />}
               </button>
               <div className="min-w-0">
-                <p className="text-[13px] font-bold uppercase text-[#d5ae3e]">
+                <p className="text-[12px] font-bold uppercase text-[#d5ae3e] sm:text-[13px]">
                   Admin Dashboard
                 </p>
-                <h1 className="truncate text-[20px] font-bold text-[#10221f] sm:text-[22px]">
+                <h1 className="truncate text-[17px] font-bold text-[#10221f] min-[380px]:text-[19px] sm:text-[22px]">
                   Almfood AB Control Panel
                 </h1>
               </div>
             </div>
-            <div className="hidden items-center gap-2 sm:flex">
+            <div className="flex items-center gap-2">
               <Link
                 href="/"
-                className="inline-flex h-10 items-center gap-2 rounded-full border border-[#dfe8dd] bg-white px-4 text-[14px] font-bold text-[#31583d] transition hover:bg-[#f4faf2]"
+                className="hidden h-10 items-center gap-2 rounded-full border border-[#dfe8dd] bg-white px-4 text-[14px] font-bold text-[#31583d] transition hover:bg-[#f4faf2] sm:inline-flex"
               >
                 <Home size={17} strokeWidth={2.2} />
                 Home
@@ -122,10 +122,11 @@ export default function AdminShell({ children }: AdminShellProps) {
               <button
                 type="button"
                 onClick={handleLogout}
-                className="inline-flex h-10 items-center gap-2 rounded-full border border-[#dfe8dd] bg-white px-4 text-[14px] font-bold text-[#31583d] transition hover:bg-[#f4faf2]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#dfe8dd] bg-white text-[#31583d] transition hover:bg-[#f4faf2] sm:w-auto sm:gap-2 sm:px-4 sm:text-[14px] sm:font-bold"
+                aria-label="Logout"
               >
                 <LogOut size={17} strokeWidth={2.2} />
-                Logout
+                <span className="hidden sm:inline">Logout</span>
               </button>
             </div>
           </div>
@@ -183,7 +184,7 @@ export default function AdminShell({ children }: AdminShellProps) {
           </div>
         ) : null}
 
-        <main className="px-4 py-6 sm:px-6 lg:px-8">{children}</main>
+        <main className="px-3 py-4 sm:px-6 sm:py-6 lg:px-8">{children}</main>
       </div>
     </div>
   );

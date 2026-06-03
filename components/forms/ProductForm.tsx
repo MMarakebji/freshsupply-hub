@@ -368,7 +368,7 @@ export default function ProductForm({ mode, productId }: ProductFormProps) {
 
   return (
     <section className="rounded-[8px] border border-[#dfeadd] bg-white shadow-[0_10px_24px_rgba(49,88,61,0.06)]">
-      <div className="flex flex-col gap-4 border-b border-[#e4eee6] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-4 border-b border-[#e4eee6] px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-5">
         <div>
           <Link
             href="/admin/products"
@@ -383,7 +383,7 @@ export default function ProductForm({ mode, productId }: ProductFormProps) {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6 p-5">
+      <form onSubmit={handleSubmit} className="space-y-6 p-4 sm:p-5">
         {error ? (
           <p className="rounded-[8px] border border-[#f4c7c7] bg-[#fff1f1] px-5 py-4 text-[14px] font-bold text-[#9b1c1c]">
             {error}
@@ -471,7 +471,7 @@ export default function ProductForm({ mode, productId }: ProductFormProps) {
 
         </div>
 
-        <section className="rounded-[8px] border border-[#dfe8dd] bg-[#fbfdf8] p-5">
+        <section className="rounded-[8px] border border-[#dfe8dd] bg-[#fbfdf8] p-4 sm:p-5">
           <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <h3 className="text-[16px] font-bold text-[#1f3025]">
@@ -666,7 +666,7 @@ export default function ProductForm({ mode, productId }: ProductFormProps) {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-5">
+        <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-5">
           <label className="flex cursor-pointer items-center gap-3 text-[14px] font-bold text-[#1f3025]">
             <input
               type="checkbox"
@@ -695,7 +695,7 @@ export default function ProductForm({ mode, productId }: ProductFormProps) {
         <button
           type="submit"
           disabled={isSaving}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#5a9a4a] px-7 text-[15px] font-bold text-white transition hover:bg-[#4f8b42] disabled:cursor-not-allowed disabled:opacity-65"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#5a9a4a] px-7 text-[15px] font-bold text-white transition hover:bg-[#4f8b42] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
         >
           <Save size={18} strokeWidth={2.2} />
           {isSaving ? "Saving..." : "Save Product"}

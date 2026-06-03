@@ -138,7 +138,7 @@ export default function AdminUserForm({ mode, userId }: AdminUserFormProps) {
 
   return (
     <section className="rounded-[8px] border border-[#dfeadd] bg-white shadow-[0_10px_24px_rgba(49,88,61,0.06)]">
-      <div className="border-b border-[#e4eee6] px-5 py-4">
+      <div className="border-b border-[#e4eee6] px-4 py-4 sm:px-5">
         <Link
           href="/admin/users"
           className="inline-flex items-center gap-2 text-[14px] font-bold text-[#31583d] transition hover:text-[#5a9a4a]"
@@ -149,7 +149,7 @@ export default function AdminUserForm({ mode, userId }: AdminUserFormProps) {
         <h2 className="mt-3 text-[22px] font-bold text-[#10221f]">{title}</h2>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6 p-5">
+      <form onSubmit={handleSubmit} className="space-y-6 p-4 sm:p-5">
         {error ? (
           <p className="rounded-[8px] border border-[#f4c7c7] bg-[#fff1f1] px-5 py-4 text-[14px] font-bold text-[#9b1c1c]">
             {error}
@@ -207,7 +207,7 @@ export default function AdminUserForm({ mode, userId }: AdminUserFormProps) {
         <button
           type="submit"
           disabled={isSaving}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#5a9a4a] px-7 text-[15px] font-bold text-white transition hover:bg-[#4f8b42] disabled:cursor-not-allowed disabled:opacity-65"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#5a9a4a] px-7 text-[15px] font-bold text-white transition hover:bg-[#4f8b42] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
         >
           <Save size={18} strokeWidth={2.2} />
           {isSaving ? "Saving..." : "Save Admin"}

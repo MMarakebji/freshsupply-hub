@@ -76,7 +76,7 @@ export default async function ContactPage() {
 
   return (
     <main className={`${fredoka.className} bg-white`}>
-      <section className="relative isolate min-h-[calc(100svh-80px)] overflow-hidden bg-[#f3f9ee]">
+      <section className="relative isolate min-h-[620px] overflow-hidden bg-[#f3f9ee] sm:min-h-[calc(100svh-80px)]">
         <Image
           src="/images/contact-us-background2.png"
           alt=""
@@ -87,25 +87,25 @@ export default async function ContactPage() {
         />
         <div className="absolute inset-0 z-10 bg-[#f3f9ee]/10" />
 
-        <div className="relative z-30 mx-auto flex min-h-[calc(100svh-80px)] max-w-[1180px] flex-col items-center px-4 pb-[46vh] pt-12 text-center sm:px-6 sm:pb-[48vh] sm:pt-16 lg:px-8 lg:pb-[50vh] lg:pt-20">
-          <p className="text-[18px] font-bold leading-none text-[#d5a022] sm:text-[24px]">
+        <div className="relative z-30 mx-auto flex min-h-[620px] max-w-[1180px] flex-col items-center px-4 pb-[250px] pt-10 text-center min-[380px]:pb-[270px] min-[430px]:pb-[295px] sm:min-h-[calc(100svh-80px)] sm:px-6 sm:pb-[48vh] sm:pt-16 lg:px-8 lg:pb-[50vh] lg:pt-20">
+          <p className="text-[16px] font-bold leading-none text-[#d5a022] sm:text-[24px]">
             Welcome To
           </p>
-          <h1 className="mt-3 text-[34px] font-bold leading-tight tracking-normal text-[#1a2720] sm:text-[48px] lg:text-[58px]">
+          <h1 className="mt-2 max-w-[720px] text-[clamp(2rem,9vw,2.5rem)] font-bold leading-[1.08] tracking-normal text-[#1a2720] sm:mt-3 sm:text-[48px] sm:leading-tight lg:text-[58px]">
             {title}
           </h1>
-          <p className="mt-4 max-w-[560px] text-[14px] font-medium leading-6 text-[#314035] sm:text-[17px] sm:leading-7">
+          <p className="mt-3 max-w-[560px] text-[14px] font-medium leading-6 text-[#314035] sm:mt-4 sm:text-[17px] sm:leading-7">
             {description}
           </p>
           <Link
             href={`mailto:${email}`}
-            className="mt-6 inline-flex h-[46px] items-center justify-center rounded-full bg-[#5a9a4a] px-8 text-[15px] font-bold leading-none text-white shadow-[0_14px_28px_rgba(90,154,74,0.24)] transition hover:-translate-y-0.5 hover:bg-[#4f8b42] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#d5ae3e]/35"
+            className="mt-5 inline-flex h-[44px] items-center justify-center rounded-full bg-[#5a9a4a] px-7 text-[14px] font-bold leading-none text-white shadow-[0_14px_28px_rgba(90,154,74,0.24)] transition hover:-translate-y-0.5 hover:bg-[#4f8b42] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#d5ae3e]/35 sm:mt-6 sm:h-[46px] sm:px-8 sm:text-[15px]"
           >
             Get In Touch
           </Link>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 mx-auto h-[46vh] max-h-[410px] min-h-[250px] w-full sm:h-[48vh] sm:max-h-[460px] lg:h-[52vh] lg:max-h-[520px]">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 mx-auto h-[240px] w-full min-[380px]:h-[260px] min-[430px]:h-[285px] sm:h-[48vh] sm:max-h-[460px] sm:min-h-[250px] lg:h-[52vh] lg:max-h-[520px]">
           <Image
             src="/images/contact-us-products.png"
             alt="Almfood AB grocery products including rice, oil, milk, snacks, canned goods, and ready meals"

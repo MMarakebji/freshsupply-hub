@@ -95,22 +95,22 @@ export default function AdminDashboardClient() {
   ];
 
   return (
-    <div className="space-y-6">
-      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <div className="space-y-4 sm:space-y-6">
+      <section className="grid gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
         {stats.map((item) => {
           const Icon = item.icon;
 
           return (
             <div
               key={item.label}
-              className="rounded-[8px] border border-[#dfeadd] bg-white p-5 shadow-[0_10px_24px_rgba(49,88,61,0.06)]"
+              className="rounded-[8px] border border-[#dfeadd] bg-white p-4 shadow-[0_10px_24px_rgba(49,88,61,0.06)] sm:p-5"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-[14px] font-bold text-[#667167]">
                     {item.label}
                   </p>
-                  <p className="mt-3 text-[34px] font-bold leading-none text-[#10221f]">
+                  <p className="mt-3 text-[30px] font-bold leading-none text-[#10221f] sm:text-[34px]">
                     {item.value}
                   </p>
                   <p className="mt-3 text-[13px] font-bold text-[#5a9a4a]">
@@ -126,14 +126,46 @@ export default function AdminDashboardClient() {
         })}
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.25fr_0.75fr]">
+      <section className="grid gap-4 sm:gap-6 xl:grid-cols-[1.25fr_0.75fr]">
         <div className="rounded-[8px] border border-[#dfeadd] bg-white shadow-[0_10px_24px_rgba(49,88,61,0.06)]">
           <div className="border-b border-[#e4eee6] px-5 py-4">
             <h2 className="text-[20px] font-bold text-[#10221f]">
               Latest Products
             </h2>
           </div>
-          <div className="overflow-x-auto">
+          <div className="divide-y divide-[#edf2ea] sm:hidden">
+            {dashboard.latestProducts.map((product) => (
+              <article key={product.id} className="px-4 py-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <h3 className="truncate text-[16px] font-bold text-[#10221f]">
+                      {product.name}
+                    </h3>
+                    <p className="mt-1 text-[13px] font-medium text-[#667167]">
+                      {product.category}
+                    </p>
+                  </div>
+                  <p className="shrink-0 text-[14px] font-bold text-[#31583d]">
+                    {formatPrice(product.price)}
+                  </p>
+                </div>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#edf6ea] px-3 py-1 text-[12px] font-bold text-[#31583d]">
+                    {isOutOfStock(product.availability) ? (
+                      <AlertTriangle size={14} />
+                    ) : (
+                      <CheckCircle2 size={14} />
+                    )}
+                    {getAvailabilityLabel(product.availability)}
+                  </span>
+                  <span className="rounded-full bg-[#fbfdf8] px-3 py-1 text-[12px] font-bold text-[#667167] ring-1 ring-[#dfe8dd]">
+                    {formatDate(product.createdAt)}
+                  </span>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="hidden overflow-x-auto sm:block">
             <table className="w-full min-w-[680px] text-left">
               <thead className="bg-[#fbfdf8] text-[13px] font-bold uppercase text-[#667167]">
                 <tr>
@@ -173,12 +205,12 @@ export default function AdminDashboardClient() {
                 ))}
               </tbody>
             </table>
-            {dashboard.latestProducts.length === 0 ? (
-              <p className="px-5 py-8 text-center text-[15px] font-medium text-[#667167]">
-                No products in the database yet.
-              </p>
-            ) : null}
           </div>
+          {dashboard.latestProducts.length === 0 ? (
+            <p className="px-5 py-8 text-center text-[15px] font-medium text-[#667167]">
+              No products in the database yet.
+            </p>
+          ) : null}
         </div>
 
         <div className="rounded-[8px] border border-[#dfeadd] bg-white shadow-[0_10px_24px_rgba(49,88,61,0.06)]">
@@ -189,11 +221,11 @@ export default function AdminDashboardClient() {
           </div>
           <div className="divide-y divide-[#edf2ea]">
             {dashboard.recentMessages.map((message) => (
-              <div key={message.id} className="px-5 py-4">
+              <div key={message.id} className="px-4 py-4 sm:px-5">
                 <div className="flex items-start justify-between gap-3">
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-bold text-[#10221f]">{message.name}</p>
-                    <p className="mt-1 text-[13px] font-medium text-[#667167]">
+                    <p className="mt-1 break-all text-[13px] font-medium text-[#667167]">
                       {message.email}
                     </p>
                   </div>

@@ -44,7 +44,7 @@ export default function AdminMessagesPage() {
 
   return (
     <section className="rounded-[8px] border border-[#dfeadd] bg-white shadow-[0_10px_24px_rgba(49,88,61,0.06)]">
-      <div className="border-b border-[#e4eee6] px-5 py-4">
+      <div className="border-b border-[#e4eee6] px-4 py-4 sm:px-5">
         <h2 className="text-[22px] font-bold text-[#10221f]">Messages</h2>
         <p className="mt-1 text-[14px] font-medium text-[#667167]">
           Contact messages loaded from the database.
@@ -52,20 +52,20 @@ export default function AdminMessagesPage() {
       </div>
 
       {error ? (
-        <p className="m-5 rounded-[8px] border border-[#f4c7c7] bg-[#fff1f1] px-5 py-4 text-[14px] font-bold text-[#9b1c1c]">
+        <p className="m-4 rounded-[8px] border border-[#f4c7c7] bg-[#fff1f1] px-4 py-4 text-[14px] font-bold text-[#9b1c1c] sm:m-5 sm:px-5">
           {error}
         </p>
       ) : null}
 
       <div className="divide-y divide-[#edf2ea]">
         {messages.map((message) => (
-          <article key={message.id} className="px-5 py-5">
+          <article key={message.id} className="px-4 py-5 sm:px-5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div>
+              <div className="min-w-0">
                 <h3 className="text-[18px] font-bold text-[#10221f]">
                   {message.subject}
                 </h3>
-                <p className="mt-1 text-[14px] font-medium text-[#667167]">
+                <p className="mt-1 break-all text-[14px] font-medium text-[#667167]">
                   {message.name} · {message.email}
                 </p>
               </div>

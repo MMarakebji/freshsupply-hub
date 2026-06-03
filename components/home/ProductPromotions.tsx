@@ -50,7 +50,7 @@ export default function ProductPromotions() {
           <Link
             href="/products"
             className="group relative block min-h-[220px] overflow-hidden rounded-[24px] shadow-sm outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl focus-visible:ring-4 focus-visible:ring-[#f7c437]/45"
-            aria-label="Shop selected fresh produce deals"
+            aria-label="Fresh produce specials coming soon"
           >
             <Image
               src="/images/hero-2.png"
@@ -63,11 +63,11 @@ export default function ProductPromotions() {
             <div className="absolute inset-0 bg-white/58 backdrop-blur-[3px] lg:hidden" />
             <div className="relative z-10 flex min-h-[220px] items-center px-7 py-7 sm:px-9">
               <h2 className="max-w-[300px] text-[28px] font-bold leading-[1.12] text-[#2f180f] sm:text-[33px]">
-                Up to 30% Off
+                Fresh Produce
                 <br />
-                Selected Fresh
+                Specials
                 <br />
-                Produce
+                Coming Soon
               </h2>
             </div>
           </Link>
@@ -75,7 +75,7 @@ export default function ProductPromotions() {
           <Link
             href="/products"
             className="group relative block min-h-[220px] overflow-hidden rounded-[24px] shadow-sm outline-none transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl focus-visible:ring-4 focus-visible:ring-[#f7c437]/45"
-            aria-label="Shop ready-to-eat gourmet meals and frozen classics"
+            aria-label="Ready-to-eat gourmet meals and frozen classics coming soon"
           >
             <Image
               src="/images/hero-3.png"
@@ -88,13 +88,13 @@ export default function ProductPromotions() {
             <div className="absolute inset-0 bg-black/42 backdrop-blur-[3px] lg:hidden" />
             <div className="relative z-10 flex min-h-[220px] items-center px-7 py-7 sm:px-9">
               <h2 className="max-w-[330px] text-[28px] font-bold leading-[1.14] text-white sm:text-[33px]">
-                20% Off
-                <br />
                 Ready-to-Eat
                 <br />
                 Gourmet Meals &
                 <br />
                 Frozen Classics
+                <br />
+                Coming Soon
               </h2>
             </div>
           </Link>
