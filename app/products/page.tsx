@@ -100,7 +100,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         <div className="absolute bottom-0 right-0 z-0 hidden aspect-square w-[52vw] max-w-[830px] translate-x-[5%] translate-y-[5%] rounded-full bg-[#e8f4df] lg:block" />
         <div className="pointer-events-none relative mx-auto mb-8 aspect-[1.26] w-full max-w-[500px] sm:max-w-[620px] lg:absolute lg:bottom-0 lg:right-0 lg:z-10 lg:mb-0 lg:h-[80%] lg:w-[52vw] lg:max-w-none">
           <Image
-            src="/images/product-shop.png"
+            src="/images/product-shop2.png"
             alt="Fresh grocery products arranged inside a shopping bag"
             fill
             priority

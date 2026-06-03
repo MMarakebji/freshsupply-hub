@@ -23,7 +23,7 @@ const fallbackContact = {
     "Have questions about products, orders, or delivery? Our team is here to help you find fresh groceries, get order support, and make every shopping experience simple.",
   phone: "+961 00 000 000",
   email: "hello@almfoodab.com",
-  address: "Fresh Market Street, Beirut",
+  address: "Stockholm, Sweden",
 };
 
 function toPhoneHref(phone: string) {
@@ -161,7 +161,7 @@ export default async function ContactPage() {
               </div>
               <iframe
                 title="Almfood AB location map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=35.474%2C33.876%2C35.548%2C33.916&layer=mapnik&marker=33.895%2C35.501"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=17.90%2C59.25%2C18.20%2C59.40&layer=mapnik&marker=59.3293%2C18.0686"
                 className="h-[260px] w-full border-0"
                 loading="lazy"
               />

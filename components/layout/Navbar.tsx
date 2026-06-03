@@ -68,12 +68,12 @@ export default function Navbar() {
           aria-label="Almfood AB home"
           onClick={() => setIsOpen(false)}
         >
-          <span className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full bg-white shadow-[0_10px_24px_rgba(49,88,61,0.16)] ring-1 ring-[#dfe9de]">
+          <span className="relative h-12 w-12 shrink-0">
             <Image
               src="/images/main-logo.png"
               alt=""
               fill
-              sizes="64px"
+              sizes="48px"
               className="scale-110 object-contain p-0"
               priority
             />

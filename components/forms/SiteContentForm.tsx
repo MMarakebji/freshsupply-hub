@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Save } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 import type { Database } from "@/types/database.types";
@@ -52,6 +53,7 @@ function mapRowToForm(row: SiteContentRow): SiteContentFormState {
 }
 
 export default function SiteContentForm() {
+  const router = useRouter();
   const [form, setForm] = useState<SiteContentFormState>(blankForm);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
@@ -115,9 +117,11 @@ export default function SiteContentForm() {
 
     setIsSaving(true);
 
-    const { error: saveError } = await supabase
+    const { data: savedContent, error: saveError } = await supabase
       .from("site_content")
-      .upsert(payload, { onConflict: "page_key" });
+      .upsert(payload, { onConflict: "page_key" })
+      .select("*")
+      .single();
 
     setIsSaving(false);
 
@@ -126,6 +130,11 @@ export default function SiteContentForm() {
       return;
     }
 
+    if (savedContent) {
+      setForm(mapRowToForm(savedContent));
+    }
+
+    router.refresh();
     setMessage("Site content updated successfully.");
   }
 

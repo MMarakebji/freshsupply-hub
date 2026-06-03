@@ -3,7 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Mail, MapPin, PencilLine, Phone } from "lucide-react";
+import { supabase } from "@/lib/supabaseClient";
 import type { SiteContentRow } from "@/features/siteContent/siteContentApi";
 
 const shopLinks = [
@@ -25,7 +27,7 @@ const fallbackContact = {
     "Fresh groceries, pantry essentials, snacks, and household favorites selected for everyday meals.",
   phone: "+961 00 000 000",
   email: "hello@almfoodab.com",
-  address: "Almfood AB Market, Beirut, Lebanon",
+  address: "Stockholm, Sweden",
   instagram_url: "",
   facebook_url: "",
   linkedin_url: "",
@@ -76,7 +78,31 @@ type FooterProps = {
 
 export default function Footer({ contactContent }: FooterProps) {
   const pathname = usePathname();
-  const contact = contactContent ?? fallbackContact;
+  const [freshContactContent, setFreshContactContent] =
+    useState<Partial<SiteContentRow> | null>(contactContent ?? null);
+  const contact = freshContactContent ?? fallbackContact;
+
+  useEffect(() => {
+    let isActive = true;
+
+    async function loadContactContent() {
+      const { data } = await supabase
+        .from("site_content")
+        .select("*")
+        .eq("page_key", "contact")
+        .maybeSingle();
+
+      if (isActive && data) {
+        setFreshContactContent(data);
+      }
+    }
+
+    void loadContactContent();
+
+    return () => {
+      isActive = false;
+    };
+  }, [pathname]);
 
   if (pathname.startsWith("/admin")) {
     return null;
@@ -92,12 +118,12 @@ export default function Footer({ contactContent }: FooterProps) {
               className="inline-flex items-center gap-3 text-[#274832]"
               aria-label="Almfood AB home"
             >
-              <span className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full bg-white shadow-[0_10px_24px_rgba(49,88,61,0.16)] ring-1 ring-[#dfe9de]">
+              <span className="relative h-14 w-14 shrink-0">
                 <Image
                   src="/images/main-logo.png"
                   alt=""
                   fill
-                  sizes="68px"
+                  sizes="56px"
                   className="scale-110 object-contain p-0"
                 />
               </span>
