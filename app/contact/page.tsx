@@ -20,11 +20,17 @@ const fredoka = Fredoka({
 const fallbackContact = {
   title: "Contact Almfood AB",
   content:
-    "Have questions about products, orders, or delivery? Our team is here to help you find fresh groceries, get order support, and make every shopping experience simple.",
+    "For questions regarding products, deliveries, or orders, you are welcome to contact us. We will respond with clear and efficient support.\nWe usually respond within 24 hours on weekdays.",
   phone: "+961 00 000 000",
   email: "hello@almfoodab.com",
   address: "Stockholm, Sweden",
 };
+
+const previousContactDescription =
+  "Have a product question, delivery request, or order note? Send us a message and our team will get back to you with clear and friendly support.";
+
+const contactDescription =
+  "For questions regarding products, deliveries, or orders, you are welcome to contact us. We will respond with clear and efficient support.\nWe usually respond within 24 hours on weekdays.";
 
 function toPhoneHref(phone: string) {
   return `tel:${phone.replace(/[^\d+]/g, "")}`;
@@ -43,7 +49,10 @@ function toMapHref(address: string) {
 export default async function ContactPage() {
   const content = await getSiteContent("contact").catch(() => null);
   const title = content?.title ?? fallbackContact.title;
-  const description = content?.content ?? fallbackContact.content;
+  const description =
+    content?.content === previousContactDescription
+      ? contactDescription
+      : content?.content ?? fallbackContact.content;
   const phone = content?.phone ?? fallbackContact.phone;
   const email = content?.email ?? fallbackContact.email;
   const address = content?.address ?? fallbackContact.address;
@@ -94,7 +103,7 @@ export default async function ContactPage() {
           <h1 className="mt-2 max-w-[720px] text-[clamp(2rem,9vw,2.5rem)] font-bold leading-[1.08] tracking-normal text-[#1a2720] sm:mt-3 sm:text-[48px] sm:leading-tight lg:text-[58px]">
             {title}
           </h1>
-          <p className="mt-3 max-w-[560px] text-[14px] font-medium leading-6 text-[#314035] sm:mt-4 sm:text-[17px] sm:leading-7">
+          <p className="mt-3 max-w-[560px] whitespace-pre-line text-[14px] font-medium leading-6 text-[#314035] sm:mt-4 sm:text-[17px] sm:leading-7">
             {description}
           </p>
           <Link
@@ -175,7 +184,7 @@ export default async function ContactPage() {
             <h2 className="mt-3 text-[40px] font-bold leading-tight tracking-normal text-[#10221f] sm:text-[54px]">
               Get In Touch
             </h2>
-            <p className="mt-4 max-w-[620px] text-[16px] font-medium leading-7 text-[#667167]">
+            <p className="mt-4 max-w-[620px] whitespace-pre-line text-[16px] font-medium leading-7 text-[#667167]">
               {description}
             </p>
 

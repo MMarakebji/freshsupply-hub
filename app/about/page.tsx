@@ -39,18 +39,19 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-[1480px] items-center gap-10 lg:min-h-[650px] lg:grid-cols-[0.88fr_1.12fr] lg:gap-8">
           <div className="relative z-20 text-center sm:text-left">
             <p className="text-[15px] font-semibold uppercase leading-none tracking-normal text-[#d5ae3e] sm:text-[17px]">
-              About Almfood AB
+              ABOUT ALMFOOD AB
             </p>
             <h1 className="mt-5 text-[44px] font-bold leading-[1.08] tracking-normal text-[#101510] sm:text-[64px] lg:text-[78px]">
-              Supplying
-              <span className="text-[#6d9659]"> premium food</span>
-              <span className="block">for growing businesses</span>
+              Food
+              <span className="text-[#6d9659]"> Solutions</span>
+              <span className="block">for Growing Businesses</span>
             </h1>
             <p className="mx-auto mt-6 max-w-[560px] text-[17px] font-medium leading-8 text-[#313a32] sm:mx-0 sm:text-[20px]">
-              Welcome to Almfood AB, your B2B food wholesale partner. We supply
-              premium ingredients directly to restaurants, grocery stores, and
-              retailers with better pricing, full traceability, and
-              uncompromising quality.
+              Almfood AB is a B2B food wholesale partner supplying restaurants,
+              grocery retailers, and professional buyers. We work directly with
+              selected producers worldwide to streamline the supply chain,
+              ensuring competitive pricing, full traceability, and consistent
+              product quality across our assortment.
             </p>
             <Link
               href="/products"
@@ -80,10 +81,11 @@ export default function AboutPage() {
               About Us
             </h2>
             <p className="mx-auto mt-6 max-w-[520px] text-[20px] font-medium leading-[1.7] text-[#252a32] sm:mx-0 sm:text-[24px]">
-              By importing directly from select producers worldwide, we cut out
-              the middlemen. This gives your business access to dependable
-              supply, competitive volume pricing, and ingredients selected for
-              consistent wholesale quality.
+              We import directly from quality-assured producers worldwide to
+              streamline the supply chain and reduce the number of
+              intermediaries. This ensures high supply reliability, competitive
+              volume pricing, and a product range based on carefully selected,
+              quality-assured ingredients for the wholesale market.
             </p>
             <AboutLearnMoreModal />
           </div>

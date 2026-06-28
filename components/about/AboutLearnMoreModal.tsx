@@ -6,18 +6,18 @@ import { ArrowRight, CheckCircle2, PackageCheck, Truck, X } from "lucide-react";
 
 const highlights = [
   {
-    title: "Source-led purchasing",
-    text: "We work close to selected producers, which helps keep quality visible from origin to delivery.",
+    title: "Direct Sourcing & Traceability",
+    text: "Working directly with selected producers allows us to maintain clear product traceability and consistent quality throughout the supply chain.",
     icon: CheckCircle2,
   },
   {
-    title: "Wholesale reliability",
-    text: "Orders are handled with quality checks and logistics built for restaurants, stores, and retailers.",
+    title: "Competitive Wholesale Pricing",
+    text: "Direct sourcing helps reduce costs in the supply chain, enabling competitive volume pricing and long-term value for our customers.",
     icon: Truck,
   },
   {
-    title: "Business-friendly supply",
-    text: "Volume pricing, flexible terms, and direct support help your team plan stock with confidence.",
+    title: "Reliable Supply & Logistics",
+    text: "We combine quality control with efficient logistics to ensure dependable deliveries and consistent product availability for restaurants, grocery retailers, and professional buyers.",
     icon: PackageCheck,
   },
 ];
@@ -80,7 +80,7 @@ export default function AboutLearnMoreModal() {
                       id="about-learn-more-title"
                       className="mt-3 text-[28px] font-bold leading-tight text-[#10221f] sm:text-[36px]"
                     >
-                      How Almfood AB supports your business
+                      How Almfood AB Supports Your Business
                     </h2>
                   </div>
                   <button
@@ -94,11 +94,11 @@ export default function AboutLearnMoreModal() {
                 </div>
 
                 <p className="mt-5 text-[16px] font-medium leading-7 text-[#52615b] sm:text-[18px]">
-                  Almfood AB is built for food businesses that need dependable
-                  ingredients, clear sourcing, and pricing that makes sense at
-                  wholesale scale. By buying directly from carefully chosen
-                  producers, we reduce extra layers in the supply chain and keep
-                  quality easier to track.
+                  Almfood AB supplies restaurants, grocery retailers, and
+                  professional buyers with products sourced directly from
+                  producers worldwide. Direct sourcing allows us to offer
+                  competitive pricing, reliable traceability, and consistent
+                  quality while maintaining a stable supply chain.
                 </p>
 
                 <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -125,9 +125,9 @@ export default function AboutLearnMoreModal() {
                 </div>
 
                 <p className="mt-6 rounded-[8px] bg-[#f8f3df] px-5 py-4 text-[15px] font-bold leading-6 text-[#2c140f]">
-                  The result is a simpler wholesale partnership: premium food
-                  products, traceable sourcing, reliable delivery, and support
-                  that adapts to your order volume.
+                  The result is a dependable wholesale partnership with quality
+                  products, traceable sourcing, reliable delivery, and flexible
+                  support adapted to your purchasing requirements.
                 </p>
               </div>
             </div>,
